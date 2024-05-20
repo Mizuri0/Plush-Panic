@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: OpenInventory
+    uniqueID: 569251297
+    locked: 0
+  - name: Closedbutton&Toolbar
+    uniqueID: 2710563007
+    locked: 0
+  - name: ButtonForMainInventory
+    uniqueID: 4170022497
+    locked: 0
+  - name: MainInventoryBackground
+    uniqueID: 2258276379
+    locked: 0
+  - name: DarkBackground
+    uniqueID: 3903602763
+    locked: 0
