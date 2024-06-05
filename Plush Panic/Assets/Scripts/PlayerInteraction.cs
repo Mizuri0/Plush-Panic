@@ -13,11 +13,13 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (Input.GetKeyDown(pickUpKey))
         {
+            Debug.Log("E key pressed");
             PickUpItem();
         }
 
         if (Input.GetKeyDown(dropKey))
         {
+            Debug.Log("Q key pressed");
             DropItem();
         }
     }
@@ -26,6 +28,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (itemToPickUp != null)
         {
+            Debug.Log("Item to pick up: " + itemToPickUp.name);
             foreach (InventorySlot slot in inventorySlots)
             {
                 if (slot.transform.childCount == 0)
@@ -36,13 +39,16 @@ public class PlayerInteraction : MonoBehaviour
                     item.GetComponent<DraggableItem>().parentAfterDrag = slot.transform;
                     Destroy(itemToPickUp);
                     itemToPickUp = null;
+                    Debug.Log("Item picked up and placed in inventory");
                     break;
                 }
             }
         }
-    }
-
-    private void DropItem()
+        else
+        {
+            Debug.Log("No item to pick up");
+        }
+    }private void DropItem()
     {
         foreach (InventorySlot slot in inventorySlots)
         {
@@ -51,6 +57,8 @@ public class PlayerInteraction : MonoBehaviour
                 Transform item = slot.transform.GetChild(0);
                 item.SetParent(null);
                 item.position = transform.position + transform.forward; // Drops the item in front of the player
+                item.gameObject.AddComponent<Rigidbody>(); // Optional: add Rigidbody for physics interaction
+                Debug.Log("Item dropped from inventory");
                 break;
             }
         }
@@ -61,6 +69,7 @@ public class PlayerInteraction : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             itemToPickUp = other.gameObject;
+            Debug.Log("Item entered pickup range: " + itemToPickUp.name);
         }
     }
 
@@ -71,6 +80,7 @@ public class PlayerInteraction : MonoBehaviour
             if (itemToPickUp == other.gameObject)
             {
                 itemToPickUp = null;
+                Debug.Log("Item exited pickup range");
             }
         }
     }
