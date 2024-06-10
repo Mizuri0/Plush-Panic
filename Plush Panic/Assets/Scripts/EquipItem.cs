@@ -7,7 +7,7 @@ public class EquipScript : MonoBehaviour
     public Transform PlayerTransform;
     public GameObject Baseball_Bat;
     public Camera Camera;
-    public float range = 10f;
+    public float range = 100f;
     public float open = 100f;
 
     // Start is called before the first frame update

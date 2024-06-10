@@ -25,7 +25,6 @@ public class FPSController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
     }
-
     void Update()
     {
         // We are grounded, so recalculate move direction based on axes
