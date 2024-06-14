@@ -28,7 +28,7 @@ public class PickUpObject : MonoBehaviour
                 hasItem = true;
             }
         }
-        if (Input.GetButtonDown("q") && hasItem == true) // if you have an item and get the key to remove the object, again can be any key
+        if (Input.GetButtonDown("q") && hasItem == true) // if you have an item and get the key to remove the object
         {
             ObjectIwantToPickUp.GetComponent<Rigidbody>().isKinematic = false; // make the rigidbody work again
          
