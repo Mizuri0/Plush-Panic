@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class EquipScript : MonoBehaviour
 {
-    public Transform PlayerTransform;
-    public GameObject Baseball_Bat;
-    public Camera Camera;
-    public float range = 100f;
-    public float open = 100f;
-
+    [SerializeField]public Transform PlayerTransform;
+    [SerializeField]public GameObject Baseball_Bat;
+    [SerializeField]public Camera Camera;
+    [SerializeField]public float range = 100f;
+    [SerializeField]public float open = 100f;
     // Start is called before the first frame update
+
     void Start()
     {
         Baseball_Bat.GetComponent<Rigidbody>().isKinematic = true;
     }
-
     // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyDown("f"))

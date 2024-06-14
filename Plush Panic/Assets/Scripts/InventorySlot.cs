@@ -13,6 +13,4 @@ public class YourClass : MonoBehaviour, IDropHandler
         draggableItem.parentAfterDrag = transform;
         }
     }
-
-
 }
